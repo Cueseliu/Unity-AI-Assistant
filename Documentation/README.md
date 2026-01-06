@@ -1,161 +1,278 @@
-# AI Operator - Unity AI Assistant
+# AI Operator
 
-[中文](#中文) | [English](#english)
+**Control Unity Editor with Natural Language using LLM Tool Calling**
 
----
+[![Unity](https://img.shields.io/badge/Unity-2021.3%2B-black?logo=unity)](https://unity.com/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Cueseliu/Unity-AI-Assistant/pulls)
 
-## 中文
+AI Operator is a Unity Editor extension that enables natural language control of the Unity Editor through LLM function calling. Instead of navigating menus or writing scripts, simply describe what you want in plain English.
 
-### 简介
+![Demo](https://via.placeholder.com/800x400?text=AI+Operator+Demo+GIF)
 
-AI Operator 是一个强大的 Unity Editor 插件，让你可以通过自然语言与 AI 对话来操作 Unity。无需记忆复杂的 API，只需告诉 AI 你想做什么，它就会帮你完成。
+## Features
 
-### 功能特性
-
-- **自然语言操作** - 用中文或英文描述你想做的事，AI 自动完成
-- **30+ 内置工具** - 涵盖 GameObject、组件、材质、UI、场景管理等
-- **多 AI 服务支持** - 支持 Claude、DeepSeek、AWS Bedrock、通义千问、智谱 GLM-4、豆包等
-- **工作流自动化** - "创建一个玩家角色" 一句话完成完整流程
-- **中英文双语界面** - 随时切换界面语言
-- **配置导入导出** - 轻松备份和迁移设置
-
-### 快速开始
-
-#### 1. 导入插件
-将 AIOperator 文件夹拖入 Unity 项目的 Assets 目录
-
-#### 2. 打开设置
-菜单栏: `Window > AI Operator > Settings`
-
-#### 3. 配置 API
-1. 选择 AI 服务 (推荐 Claude 或 DeepSeek)
-2. 获取并填写 API Key
-3. 点击"测试连接"验证
-4. 保存设置
-
-#### 4. 开始使用
-菜单栏: `Window > AI Operator > Chat Window`
-
-### 示例命令
-
+### Natural Language to Unity Actions
 ```
-创建一个红色的 Cube
-把 Cube 移动到 (0, 5, 0)
-给选中的物体添加 Rigidbody
-创建一个玩家角色
-创建一个开始游戏按钮
-分析一下当前场景
+"Create a red cube at position (0, 5, 0)"
+"Add Rigidbody to all objects tagged 'Enemy'"
+"Create a UI panel with Start and Quit buttons"
+"Generate 10 enemies in a circle formation"
 ```
 
-### 支持的 AI 服务
+### 30 Built-in Tools
 
-| 服务 | 推荐度 | 说明 |
-|------|--------|------|
-| Claude | ⭐⭐⭐⭐⭐ | Anthropic 出品，效果最好 |
-| DeepSeek | ⭐⭐⭐⭐ | 国产，便宜好用 |
-| 通义千问 | ⭐⭐⭐⭐ | 阿里云，新用户免费 |
-| 智谱 GLM-4 | ⭐⭐⭐ | 国产大模型 |
-| 豆包 | ⭐⭐⭐ | 字节跳动出品 |
-| AWS Bedrock | ⭐⭐⭐⭐ | 企业级，通过 AWS 调用 Claude |
+| Category | Tools |
+|----------|-------|
+| **GameObject** | create_primitive, create_empty, find, delete, duplicate, set_transform, get_transform, batch_create |
+| **Selection** | get_selection, select_gameobject, set_parent, get_children |
+| **Components** | add_component, remove_component, get_components |
+| **Materials** | set_material_color |
+| **Prefabs** | save_as_prefab, instantiate_prefab |
+| **Scripts** | create_script (auto-generates C# MonoBehaviour) |
+| **UI (uGUI)** | create_canvas, create_button, create_text, create_image, create_slider, create_panel |
+| **Scene** | get_hierarchy, get_scene_info, analyze_scene |
+| **Console** | get_console_logs, clear_console |
 
-### 系统要求
+### Multi-Provider Architecture
 
-- Unity 2021.3 或更高版本
-- 互联网连接
-- AI 服务 API Key
+Supports 6 LLM providers with a unified interface:
 
-### 文档
+| Provider | Model | Best For |
+|----------|-------|----------|
+| **Claude** (Anthropic) | claude-3-5-sonnet | Best accuracy, recommended |
+| **DeepSeek** | deepseek-chat | Cost-effective |
+| **AWS Bedrock** | Claude via AWS | Enterprise / AWS users |
+| **Qwen** (Alibaba) | qwen-plus | Chinese language tasks |
+| **GLM-4** (Zhipu AI) | glm-4 | Alternative Chinese LLM |
+| **Doubao** (ByteDance) | doubao-pro | Chinese market |
 
-- [配置指南](Configuration.md)
-- [使用指南](UserGuide.md)
-- [工具参考](ToolReference.md)
-- [常见问题](FAQ.md)
-- [更新日志](CHANGELOG.md)
+### Workflow Automation
 
-### 技术支持
-
-如有问题，请通过以下方式联系：
-- GitHub Issues
-- Email: support@example.com
-
----
-
-## English
-
-### Introduction
-
-AI Operator is a powerful Unity Editor plugin that lets you operate Unity through natural language conversations with AI. No need to memorize complex APIs - just tell the AI what you want to do.
-
-### Features
-
-- **Natural Language Control** - Describe what you want in plain English or Chinese
-- **30+ Built-in Tools** - GameObject, components, materials, UI, scene management, etc.
-- **Multiple AI Services** - Claude, DeepSeek, AWS Bedrock, Qwen, GLM-4, Doubao
-- **Workflow Automation** - "Create a player character" completes the full workflow
-- **Bilingual Interface** - Switch between Chinese and English anytime
-- **Config Import/Export** - Easy backup and migration
-
-### Quick Start
-
-#### 1. Import Plugin
-Drag the AIOperator folder into your Unity project's Assets directory
-
-#### 2. Open Settings
-Menu: `Window > AI Operator > Settings`
-
-#### 3. Configure API
-1. Select AI service (Claude or DeepSeek recommended)
-2. Get and enter your API Key
-3. Click "Test Connection" to verify
-4. Save settings
-
-#### 4. Start Using
-Menu: `Window > AI Operator > Chat Window`
-
-### Example Commands
+Single commands trigger multi-step workflows:
 
 ```
-Create a red Cube
-Move Cube to (0, 5, 0)
-Add Rigidbody to selected object
-Create a player character
-Create a start game button
-Analyze current scene
+User: "Create a player character that can move with WASD"
+
+AI Operator executes:
+1. create_primitive → Capsule named "Player"
+2. add_component → Rigidbody (constraints set)
+3. add_component → CapsuleCollider
+4. create_script → PlayerController.cs with movement logic
+5. add_component → PlayerController to Player
+6. save_as_prefab → Assets/Prefabs/Player.prefab
 ```
 
-### Supported AI Services
+## Architecture
 
-| Service | Rating | Notes |
-|---------|--------|-------|
-| Claude | ⭐⭐⭐⭐⭐ | Best performance by Anthropic |
-| DeepSeek | ⭐⭐⭐⭐ | Chinese service, affordable |
-| Qwen | ⭐⭐⭐⭐ | Alibaba Cloud, free tier available |
-| GLM-4 | ⭐⭐⭐ | Chinese LLM by Zhipu AI |
-| Doubao | ⭐⭐⭐ | ByteDance service |
-| AWS Bedrock | ⭐⭐⭐⭐ | Enterprise-grade, Claude via AWS |
+```
+┌─────────────────────────────────────────────────────────┐
+│                    AIOperatorWindow                      │
+│                   (Unity EditorWindow)                   │
+└─────────────────────────┬───────────────────────────────┘
+                          │
+┌─────────────────────────▼───────────────────────────────┐
+│                   ILLMProvider                           │
+│            (Abstract Provider Interface)                 │
+├──────────┬──────────┬──────────┬──────────┬────────────┤
+│  Claude  │ DeepSeek │ Bedrock  │  Qwen    │  GLM-4     │
+│ Provider │ Provider │ Provider │ Provider │  Provider  │
+└──────────┴──────────┴──────────┴──────────┴────────────┘
+                          │
+                          │ Tool Calling (Function Calling)
+                          ▼
+┌─────────────────────────────────────────────────────────┐
+│                    ToolRegistry                          │
+│              (30 Registered Tool Definitions)            │
+└─────────────────────────┬───────────────────────────────┘
+                          │
+┌─────────────────────────▼───────────────────────────────┐
+│                   Tool Executors                         │
+│  GameObjectTools │ UITools │ SceneTools │ ScriptTools   │
+└─────────────────────────────────────────────────────────┘
+```
 
-### System Requirements
+## Technical Highlights
 
-- Unity 2021.3 or higher
+- **Provider Abstraction**: Clean interface (`ILLMProvider`) allows easy addition of new LLM providers
+- **Tool Definition System**: JSON Schema-based tool definitions compatible with OpenAI function calling spec
+- **Async/Await Pattern**: Non-blocking API calls with proper Unity main thread dispatching
+- **Localization System**: Runtime language switching (EN/CN) with `Localization.cs`
+- **Config Management**: Import/Export settings as JSON for team sharing
+- **Error Recovery**: Graceful handling of API failures and invalid tool calls
+
+## Installation
+
+### Option 1: Clone Repository
+```bash
+git clone https://github.com/Cueseliu/Unity-AI-Assistant.git
+```
+Copy the `AIOperator` folder to your Unity project's `Assets/` directory.
+
+### Option 2: Unity Package
+Download the `.unitypackage` from [Releases](https://github.com/Cueseliu/Unity-AI-Assistant/releases) and import into Unity.
+
+## Quick Start
+
+1. **Open Settings**: `Window > AI Operator > Settings`
+2. **Select Provider**: Choose your preferred LLM service
+3. **Enter API Key**: Get one from your provider's dashboard
+4. **Test Connection**: Click "Test" to verify
+5. **Start Chatting**: `Window > AI Operator > Chat Window`
+
+## Example Commands
+
+### Basic Operations
+```
+Create a Sphere
+Delete all Cubes in the scene
+Select the Main Camera
+Move Player to (10, 0, 5)
+Rotate Enemy by 45 degrees on Y axis
+```
+
+### Component Management
+```
+Add Rigidbody to Player
+Remove all AudioSource components from selected
+What components does the Main Camera have?
+```
+
+### UI Creation
+```
+Create a Canvas with a title text
+Add a health bar slider to the UI
+Create a settings panel with 3 buttons
+```
+
+### Scene Analysis
+```
+Show me the scene hierarchy
+How many GameObjects are in this scene?
+Analyze scene for potential issues
+```
+
+### Batch Operations
+```
+Create 5 cubes in a row
+Spawn 10 enemies in a circle around Player
+Duplicate selected object 3 times
+```
+
+## Configuration
+
+Settings are stored in Unity EditorPrefs and can be exported/imported as JSON:
+
+```json
+{
+  "provider": "Claude",
+  "apiKey": "sk-...",
+  "model": "claude-3-5-sonnet-20241022",
+  "language": "en"
+}
+```
+
+## Adding New Tools
+
+1. Define tool in `ToolDefinitions.cs`:
+```csharp
+new ToolDefinition {
+    Name = "my_custom_tool",
+    Description = "Does something useful",
+    Parameters = new {
+        type = "object",
+        properties = new {
+            param1 = new { type = "string", description = "..." }
+        },
+        required = new[] { "param1" }
+    }
+}
+```
+
+2. Implement executor in `ToolExecutors/`:
+```csharp
+public static ToolResult ExecuteMyCustomTool(Dictionary<string, object> args) {
+    // Implementation
+    return ToolResult.Success("Done!");
+}
+```
+
+3. Register in `ToolRegistry.cs`
+
+## Adding New LLM Providers
+
+1. Implement `ILLMProvider` interface:
+```csharp
+public class MyProvider : ILLMProvider {
+    public string Name => "MyProvider";
+    public async Task<LLMResponse> SendMessageAsync(string message, List<ToolDefinition> tools) {
+        // API call implementation
+    }
+}
+```
+
+2. Register in `ProviderFactory.cs`
+
+## Project Structure
+
+```
+AIOperator/
+├── Editor/
+│   ├── AIOperatorWindow.cs      # Main chat window
+│   ├── AIOperatorSettings.cs    # Settings window
+│   ├── Localization/
+│   │   ├── Localization.cs      # Language manager
+│   │   └── LocalizedStrings.cs  # String definitions
+│   └── Tools/
+│       ├── Core/
+│       │   ├── ToolDefinition.cs
+│       │   ├── ToolRegistry.cs
+│       │   └── ToolResult.cs
+│       └── Executors/
+│           ├── GameObjectTools.cs
+│           ├── UITools.cs
+│           ├── SceneTools.cs
+│           └── ...
+├── LLM/
+│   ├── ILLMProvider.cs          # Provider interface
+│   ├── SystemPromptBuilder.cs   # Prompt construction
+│   ├── Providers/
+│   │   ├── ClaudeProvider.cs
+│   │   ├── DeepSeekProvider.cs
+│   │   └── ...
+│   └── Models/
+│       ├── LLMRequest.cs
+│       └── LLMResponse.cs
+├── Documentation/
+└── package.json
+```
+
+## Requirements
+
+- Unity 2021.3 LTS or newer
 - Internet connection
-- AI service API Key
+- API key from supported provider
 
-### Documentation
+## Roadmap
 
-- [Configuration Guide](Configuration.md)
-- [User Guide](UserGuide.md)
-- [Tool Reference](ToolReference.md)
-- [FAQ](FAQ.md)
-- [Changelog](CHANGELOG.md)
+- [ ] Animation system tools
+- [ ] Asset import/management tools
+- [ ] Custom tool plugin system
+- [ ] Conversation history persistence
+- [ ] Voice input support
 
-### Support
+## Contributing
 
-For issues, please contact:
-- GitHub Issues
-- Email: support@example.com
-
----
+Contributions are welcome! Please feel free to submit issues and pull requests.
 
 ## License
 
-Copyright (c) 2024. All rights reserved.
+MIT License - see [LICENSE](LICENSE) for details.
+
+## Author
+
+Built by [Cueseliu](https://github.com/Cueseliu) - Unity + AI Integration Specialist
+
+---
+
+**Keywords**: Unity, AI, LLM, Claude, GPT, Natural Language, Editor Extension, Tool Calling, Function Calling, Automation
