@@ -1,0 +1,62 @@
+AI Operator - Unity AI Assistant
+Copyright (c) 2024 AI Operator Team
+
+UNITY ASSET STORE END USER LICENSE AGREEMENT
+
+This package is licensed under the Unity Asset Store End User License Agreement (EULA).
+For the full license terms, please see: https://unity.com/legal/as-terms
+
+Summary of key terms:
+- You may use this asset in unlimited projects
+- You may not redistribute the source code
+- You may not resell this asset
+- You may not use this asset to create competing products
+
+For questions about licensing, contact: support@aioperator.com
+
+---
+
+THIRD-PARTY NOTICES
+
+This software uses the following third-party services (API access required):
+
+1. Claude API by Anthropic
+   - Website: https://anthropic.com
+   - Terms: https://www.anthropic.com/legal/consumer-terms
+
+2. DeepSeek API
+   - Website: https://deepseek.com
+   - Terms: https://platform.deepseek.com/terms
+
+3. AWS Bedrock
+   - Website: https://aws.amazon.com/bedrock
+   - Terms: https://aws.amazon.com/service-terms
+
+4. Qwen (通义千问) by Alibaba Cloud
+   - Website: https://qwen.aliyun.com
+   - Terms: https://terms.alicdn.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071355_28125.html
+
+5. GLM-4 by Zhipu AI
+   - Website: https://open.bigmodel.cn
+   - Terms: https://open.bigmodel.cn/dev/howuse/termsofservice
+
+6. Doubao by Volcengine
+   - Website: https://www.volcengine.com
+   - Terms: https://www.volcengine.com/docs/6256/68917
+
+Users are responsible for complying with the terms of service of their chosen AI provider.
+
+---
+
+DISCLAIMER
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+AI-generated content may not always be accurate. Users should review and verify
+all AI-generated code and configurations before use in production.

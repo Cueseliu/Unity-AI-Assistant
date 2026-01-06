@@ -1,0 +1,30 @@
+{
+  "name": "com.aioperator.unity",
+  "version": "1.0.0",
+  "displayName": "AI Operator - Unity AI Assistant",
+  "description": "Control Unity with natural language through AI chat. Create, modify, and manage GameObjects, UI, and scenes using Claude, DeepSeek, and other AI services.",
+  "unity": "2021.3",
+  "unityRelease": "0f1",
+  "documentationUrl": "https://github.com/your-repo/ai-operator",
+  "changelogUrl": "https://github.com/your-repo/ai-operator/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/your-repo/ai-operator/blob/main/LICENSE",
+  "keywords": [
+    "ai",
+    "assistant",
+    "chat",
+    "gpt",
+    "claude",
+    "natural-language",
+    "productivity",
+    "tools",
+    "editor",
+    "automation"
+  ],
+  "author": {
+    "name": "AI Operator Team",
+    "email": "support@aioperator.com",
+    "url": "https://aioperator.com"
+  },
+  "type": "tool",
+  "samples": []
+}
